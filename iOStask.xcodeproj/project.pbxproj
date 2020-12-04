@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B039408B2579288E002A597A /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039408A2579288E002A597A /* Credentials.swift */; };
-		B039409625792977002A597A /* Credentials_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039409525792977002A597A /* Credentials_test.swift */; };
-		B03940A1257929B6002A597A /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039408A2579288E002A597A /* Credentials.swift */; };
 		B03E5BAF2577EA95006EA094 /* url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E5BAE2577EA95006EA094 /* url.swift */; };
 		B03E5BB02577EA95006EA094 /* url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E5BAE2577EA95006EA094 /* url.swift */; };
 		B03E5BB82577EAF5006EA094 /* URL_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E5BB72577EAF5006EA094 /* URL_test.swift */; };
@@ -39,8 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B039408A2579288E002A597A /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		B039409525792977002A597A /* Credentials_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials_test.swift; sourceTree = "<group>"; };
 		B03E5BAE2577EA95006EA094 /* url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = url.swift; sourceTree = "<group>"; };
 		B03E5BB72577EAF5006EA094 /* URL_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL_test.swift; sourceTree = "<group>"; };
 		B09372C125753767007F1E74 /* iOStask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,15 +77,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B039408925792876002A597A /* Credentials */ = {
-			isa = PBXGroup;
-			children = (
-				B039408A2579288E002A597A /* Credentials.swift */,
-				B039409525792977002A597A /* Credentials_test.swift */,
-			);
-			path = Credentials;
-			sourceTree = "<group>";
-		};
 		B03E5BAD2577EA78006EA094 /* URL */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +109,6 @@
 		B09372C325753767007F1E74 /* iOStask */ = {
 			isa = PBXGroup;
 			children = (
-				B039408925792876002A597A /* Credentials */,
 				B03E5BAD2577EA78006EA094 /* URL */,
 				B09372C425753767007F1E74 /* iOStaskApp.swift */,
 				B09372C625753767007F1E74 /* ContentView.swift */,
@@ -291,7 +276,6 @@
 			files = (
 				B03E5BAF2577EA95006EA094 /* url.swift in Sources */,
 				B09372C725753767007F1E74 /* ContentView.swift in Sources */,
-				B039408B2579288E002A597A /* Credentials.swift in Sources */,
 				B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,8 +286,6 @@
 			files = (
 				B03E5BB82577EAF5006EA094 /* URL_test.swift in Sources */,
 				B09372D725753768007F1E74 /* iOStaskTests.swift in Sources */,
-				B03940A1257929B6002A597A /* Credentials.swift in Sources */,
-				B039409625792977002A597A /* Credentials_test.swift in Sources */,
 				B03E5BB02577EA95006EA094 /* url.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
