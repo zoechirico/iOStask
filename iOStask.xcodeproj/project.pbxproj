@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03AD383257A756900D167D1 /* UIView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03AD382257A756900D167D1 /* UIView1.swift */; };
+		B03AD38B257A757F00D167D1 /* UIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03AD38A257A757F00D167D1 /* UIView2.swift */; };
 		B03E5BAF2577EA95006EA094 /* url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E5BAE2577EA95006EA094 /* url.swift */; };
 		B03E5BB02577EA95006EA094 /* url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E5BAE2577EA95006EA094 /* url.swift */; };
 		B03E5BB82577EAF5006EA094 /* URL_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E5BB72577EAF5006EA094 /* URL_test.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B03AD382257A756900D167D1 /* UIView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView1.swift; sourceTree = "<group>"; };
+		B03AD38A257A757F00D167D1 /* UIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView2.swift; sourceTree = "<group>"; };
 		B03E5BAE2577EA95006EA094 /* url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = url.swift; sourceTree = "<group>"; };
 		B03E5BB72577EAF5006EA094 /* URL_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL_test.swift; sourceTree = "<group>"; };
 		B09372C125753767007F1E74 /* iOStask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B03AD381257A752C00D167D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B09372C625753767007F1E74 /* ContentView.swift */,
+				B03AD382257A756900D167D1 /* UIView1.swift */,
+				B03AD38A257A757F00D167D1 /* UIView2.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B03E5BAD2577EA78006EA094 /* URL */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +123,9 @@
 		B09372C325753767007F1E74 /* iOStask */ = {
 			isa = PBXGroup;
 			children = (
+				B03AD381257A752C00D167D1 /* Views */,
 				B03E5BAD2577EA78006EA094 /* URL */,
 				B09372C425753767007F1E74 /* iOStaskApp.swift */,
-				B09372C625753767007F1E74 /* ContentView.swift */,
 				B09372C825753768007F1E74 /* Assets.xcassets */,
 				B09372CD25753768007F1E74 /* Info.plist */,
 				B09372CA25753768007F1E74 /* Preview Content */,
@@ -276,7 +290,9 @@
 			files = (
 				B03E5BAF2577EA95006EA094 /* url.swift in Sources */,
 				B09372C725753767007F1E74 /* ContentView.swift in Sources */,
+				B03AD383257A756900D167D1 /* UIView1.swift in Sources */,
 				B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */,
+				B03AD38B257A757F00D167D1 /* UIView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
