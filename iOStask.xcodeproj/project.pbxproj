@@ -25,6 +25,10 @@
 		B0BF44DC257D04E000B61F8B /* UIViewImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF44DA257D04E000B61F8B /* UIViewImages.swift */; };
 		B0BF44E2257D07EE00B61F8B /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF44E1257D07EE00B61F8B /* model.swift */; };
 		B0BF44E3257D07EE00B61F8B /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF44E1257D07EE00B61F8B /* model.swift */; };
+		B0BF450A257D1A6C00B61F8B /* photolib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF4509257D1A6C00B61F8B /* photolib.swift */; };
+		B0BF450B257D1A6C00B61F8B /* photolib.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF4509257D1A6C00B61F8B /* photolib.swift */; };
+		B0BF4513257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF4512257D1B9F00B61F8B /* UIViewPhotos.swift */; };
+		B0BF4514257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF4512257D1B9F00B61F8B /* UIViewPhotos.swift */; };
 		B0F7CCA4257B11F40089E1F1 /* sqlitebroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CCA3257B11F40089E1F1 /* sqlitebroker.swift */; };
 		B0F7CCB0257B14FA0089E1F1 /* sqlitebroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CCA3257B11F40089E1F1 /* sqlitebroker.swift */; };
 		B0F7CCC2257B161F0089E1F1 /* SQLiteBrokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CCC1257B161F0089E1F1 /* SQLiteBrokerTests.swift */; };
@@ -69,6 +73,8 @@
 		B0BF44C6257C3D3100B61F8B /* SQLite2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite2Tests.swift; sourceTree = "<group>"; };
 		B0BF44DA257D04E000B61F8B /* UIViewImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewImages.swift; sourceTree = "<group>"; };
 		B0BF44E1257D07EE00B61F8B /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		B0BF4509257D1A6C00B61F8B /* photolib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photolib.swift; sourceTree = "<group>"; };
+		B0BF4512257D1B9F00B61F8B /* UIViewPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPhotos.swift; sourceTree = "<group>"; };
 		B0F7CCA3257B11F40089E1F1 /* sqlitebroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqlitebroker.swift; sourceTree = "<group>"; };
 		B0F7CCC1257B161F0089E1F1 /* SQLiteBrokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteBrokerTests.swift; sourceTree = "<group>"; };
 		B0F7CCD5257BE2D90089E1F1 /* share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = share.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				B09372C625753767007F1E74 /* ContentView.swift */,
+				B0BF4512257D1B9F00B61F8B /* UIViewPhotos.swift */,
 				B03AD382257A756900D167D1 /* UIView1.swift */,
 				B03AD38A257A757F00D167D1 /* UIView2.swift */,
 				B0BF44DA257D04E000B61F8B /* UIViewImages.swift */,
@@ -194,9 +201,18 @@
 		B0BF44E0257D07D600B61F8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B0BF4508257D1A4F00B61F8B /* Photo Lib */,
 				B0BF44E1257D07EE00B61F8B /* model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B0BF4508257D1A4F00B61F8B /* Photo Lib */ = {
+			isa = PBXGroup;
+			children = (
+				B0BF4509257D1A6C00B61F8B /* photolib.swift */,
+			);
+			path = "Photo Lib";
 			sourceTree = "<group>";
 		};
 		B0F7CCA2257B11A80089E1F1 /* SQLBroker */ = {
@@ -346,11 +362,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03E5BAF2577EA95006EA094 /* url.swift in Sources */,
+				B0BF450A257D1A6C00B61F8B /* photolib.swift in Sources */,
 				B0F7CCD6257BE2D90089E1F1 /* share.swift in Sources */,
 				B09372C725753767007F1E74 /* ContentView.swift in Sources */,
 				B0BF44DB257D04E000B61F8B /* UIViewImages.swift in Sources */,
 				B03AD383257A756900D167D1 /* UIView1.swift in Sources */,
 				B0BF44E2257D07EE00B61F8B /* model.swift in Sources */,
+				B0BF4513257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */,
 				B0BF44B3257C39B100B61F8B /* SQLite2.swift in Sources */,
 				B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */,
 				B0F7CCA4257B11F40089E1F1 /* sqlitebroker.swift in Sources */,
@@ -362,6 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0BF450B257D1A6C00B61F8B /* photolib.swift in Sources */,
+				B0BF4514257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */,
 				B0F7CCC2257B161F0089E1F1 /* SQLiteBrokerTests.swift in Sources */,
 				B03E5BB82577EAF5006EA094 /* URL_test.swift in Sources */,
 				B09372D725753768007F1E74 /* iOStaskTests.swift in Sources */,

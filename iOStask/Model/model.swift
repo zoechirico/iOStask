@@ -7,6 +7,7 @@
 //import Foundation
 
 import UIKit
+import SwiftUI
 public class DB {
     var r:[S2Result]?
     
@@ -24,6 +25,30 @@ public class DB {
         }
         
         db.insert(data: "data a", image: image, num: 17.8)
+        
+        r = db.result()
+        
+
+        for (_ , item) in r!.enumerated() {
+            print("\(item.t1key),\t \(item.data), \(item.num), \(item.timeEnter)")
+        }
+        
+        db.close()
+    }
+    
+    public func completeImage(png: Data) {
+        let db = SQLite2(file: "iOStask.sqlite")
+        
+        db.open()
+        db.execute(sql: "drop table t0;")
+        db.create()
+        
+        
+        
+        
+        
+        
+        db.insert(data: "data a", image: png, num: 17.8)
         
         r = db.result()
         
