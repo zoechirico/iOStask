@@ -22,11 +22,15 @@ class SQLite2Tests: XCTestCase {
         db.open()
         db.create()
         
-        let sql = """
-            insert into t0 (data,num) values ("A longer text",3.34);
-            
-            """
-        db.execute(sql: sql)
+        
+        guard let  image = db.img(color: UIColor.green,size: CGSize(width: 20,height: 20)) else {
+            print("Query result is nil")
+            XCTAssertTrue(1==2)
+            return
+        }
+
+        
+        db.insert(data: "data", image: image, num: 7.8)
         
         let r = db.result()
         
