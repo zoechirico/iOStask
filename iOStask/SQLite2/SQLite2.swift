@@ -14,11 +14,17 @@ public struct S2Result {
     var t1key: Int64
     var data: String
     var num: Double
+    var image: NSData
     var timeEnter: String
 }
 
 
 public class SQLite2 {
+    
+    internal let SQLITE_STATIC = unsafeBitCast(0, to: sqlite3_destructor_type.self)
+    internal let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
+    
+    
     var db: OpaquePointer?
     var file: String?
     
@@ -28,7 +34,7 @@ public class SQLite2 {
     
     public func open(_ file: String = "test.sqlite")  {
         
-        if file != "test2.sqlite" {
+        if file != "test.sqlite" {
             self.file = file
         }
         
@@ -57,7 +63,7 @@ public class SQLite2 {
         if sqlite3_exec(self.db,
                         sql, nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db))
-            print("Error executing statement: \(errmsg)")
+            print("\nError executing statement: \(errmsg)")
         }
     }
     
@@ -66,7 +72,7 @@ public class SQLite2 {
         let sql = """
 
         CREATE TABLE IF NOT EXISTS t0 (t1key INTEGER
-                  PRIMARY KEY,data text,num double,timeEnter DATE);
+                  PRIMARY KEY,data text,image blob,num double,timeEnter DATE);
 
         CREATE TRIGGER IF NOT EXISTS insert_t0_timeEnter AFTER  INSERT ON t0
           BEGIN
@@ -78,6 +84,73 @@ public class SQLite2 {
     }
     
     
+    public func img(color: UIColor, size: CGSize) -> Data? {
+        
+        let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: size.width, height: size.height))
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        
+        return image.pngData()
+        
+        
+    }
+    
+    public func img2(color1: UIColor, color2: UIColor, size: CGSize) -> Data? {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: size.width, height: size.height))
+        let img = renderer.image { ctx in
+            ctx.cgContext.setFillColor(color1.cgColor)
+            ctx.cgContext.setStrokeColor(color2.cgColor)
+            ctx.cgContext.setLineWidth(10)
+
+            let rectangle = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+        }
+        return img.pngData()
+    }
+    
+    
+    
+    
+    public func insert(data: String, image: Data, num: Double){
+        var statement: OpaquePointer?
+        
+        if sqlite3_prepare_v2(db, "insert into t0 (data,image,num) values (?,?,?)", -1, &statement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error preparing insert: \(errmsg)")
+        }
+        
+        if sqlite3_bind_text(statement, 1, data, -1, SQLITE_TRANSIENT) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("failure binding foo: \(errmsg)")
+        }
+        
+        if sqlite3_bind_blob(statement, 2, (image as NSData).bytes, Int32(image.count), SQLITE_TRANSIENT) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("failure binding foo: \(errmsg)")
+        }
+        
+        if sqlite3_bind_double(statement, 3, num) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("failure binding foo: \(errmsg)")
+        }
+        
+        if sqlite3_step(statement) != SQLITE_DONE {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("failure inserting foo: \(errmsg)")
+        }
+        
+        if sqlite3_finalize(statement) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error finalizing prepared statement: \(errmsg)")
+        }
+        
+    }
+    
     
     
     public func result() -> [S2Result]  {
@@ -87,7 +160,7 @@ public class SQLite2 {
         var results: [S2Result] = []
         
         
-        if sqlite3_prepare_v2(db, "select t1key, data,num, timeEnter from t0;", -1, &statement, nil) != SQLITE_OK {
+        if sqlite3_prepare_v2(db, "select t1key,data,image,num,timeEnter from t0;", -1, &statement, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db))
             print("error preparing select: \(errmsg)")
         }
@@ -106,15 +179,23 @@ public class SQLite2 {
             }
             let data = String(cString: queryResultCol1)
             
-            let num = sqlite3_column_double(statement, 2)
+            let len = sqlite3_column_bytes(statement, 2)
+            let point = sqlite3_column_blob(statement, 2)
+            if point == nil {
+                return results
+            }
+            let image = NSData(bytes: point, length: Int(len))
             
-            guard let queryResultCol3 = sqlite3_column_text(statement, 3) else {
+            
+            let num = sqlite3_column_double(statement, 3)
+            
+            guard let queryResultCol4 = sqlite3_column_text(statement, 4) else {
                 print("Query result is nil")
                 return results
             }
-            let timeEnter = String(cString: queryResultCol3)
+            let timeEnter = String(cString: queryResultCol4)
             
-            results.append(S2Result(t1key: t1key, data: data, num: num, timeEnter: timeEnter))
+            results.append(S2Result(t1key: t1key, data: data, num: num,image: image, timeEnter: timeEnter))
             
         }
         if sqlite3_finalize(statement) != SQLITE_OK {

@@ -22,11 +22,13 @@ class SQLite2Tests: XCTestCase {
         db.open()
         db.create()
         
-        let sql = """
-            insert into t0 (data,num) values ("A longer text",3.34);
-            
-            """
-        db.execute(sql: sql)
+        guard let  image = db.img(color: UIColor.green,size: CGSize(width: 20,height: 20)) else {
+            print("Can't create image.")
+            XCTAssertTrue(1==2)
+            return
+        }
+        
+        db.insert(data: "data a", image: image, num: 17.8)
         
         let r = db.result()
         
@@ -34,11 +36,8 @@ class SQLite2Tests: XCTestCase {
         for (_ , item) in r.enumerated() {
             print("\(item.t1key),\t \(item.data), \(item.num), \(item.timeEnter)")
         }
-
         
         db.close()
-        
-        
         
     }
     
