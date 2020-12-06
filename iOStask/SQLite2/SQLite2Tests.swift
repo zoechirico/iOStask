@@ -20,26 +20,21 @@ class SQLite2Tests: XCTestCase {
     func testSQLite2() throws {
         let db = SQLite2()
         db.open()
-        var sql = """
-
-        CREATE TABLE IF NOT EXISTS t0 (t1key INTEGER
-                  PRIMARY KEY,data text,num double,timeEnter DATE);
-
-        CREATE TRIGGER IF NOT EXISTS insert_t0_timeEnter AFTER  INSERT ON t0
-          BEGIN
-            UPDATE t0 SET timeEnter = DATETIME('NOW')  WHERE rowid = new.rowid;
-          END;
-
-        """
-        db.execute(sql: sql)
+        db.create()
         
-        sql = """
-            insert into t0 (data,num) values ("A longer text",3);
+        let sql = """
+            insert into t0 (data,num) values ("A longer text",3.34);
             
             """
         db.execute(sql: sql)
         
-        db.result()
+        let r = db.result()
+        
+        XCTAssertTrue(r.count >= 1)
+        for (_ , item) in r.enumerated() {
+            print("\(item.t1key),\t \(item.data), \(item.num), \(item.timeEnter)")
+        }
+
         
         db.close()
         
