@@ -34,11 +34,8 @@ class SQLite2Tests: XCTestCase {
         for (_ , item) in r.enumerated() {
             print("\(item.t1key),\t \(item.data), \(item.num), \(item.timeEnter)")
         }
-
         
         db.close()
-        
-        
         
     }
     
