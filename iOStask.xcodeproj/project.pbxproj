@@ -18,6 +18,13 @@
 		B09372CC25753768007F1E74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09372CB25753768007F1E74 /* Preview Assets.xcassets */; };
 		B09372D725753768007F1E74 /* iOStaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372D625753768007F1E74 /* iOStaskTests.swift */; };
 		B09372E225753768007F1E74 /* iOStaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372E125753768007F1E74 /* iOStaskUITests.swift */; };
+		B0BF44B3257C39B100B61F8B /* SQLite2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF44B2257C39B100B61F8B /* SQLite2.swift */; };
+		B0BF44BF257C3CE400B61F8B /* SQLite2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF44B2257C39B100B61F8B /* SQLite2.swift */; };
+		B0BF44C7257C3D3100B61F8B /* SQLite2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF44C6257C3D3100B61F8B /* SQLite2Tests.swift */; };
+		B0F7CCA4257B11F40089E1F1 /* sqlitebroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CCA3257B11F40089E1F1 /* sqlitebroker.swift */; };
+		B0F7CCB0257B14FA0089E1F1 /* sqlitebroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CCA3257B11F40089E1F1 /* sqlitebroker.swift */; };
+		B0F7CCC2257B161F0089E1F1 /* SQLiteBrokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CCC1257B161F0089E1F1 /* SQLiteBrokerTests.swift */; };
+		B0F7CCD6257BE2D90089E1F1 /* share.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CCD5257BE2D90089E1F1 /* share.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,11 @@
 		B09372DD25753768007F1E74 /* iOStaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOStaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09372E125753768007F1E74 /* iOStaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOStaskUITests.swift; sourceTree = "<group>"; };
 		B09372E325753768007F1E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0BF44B2257C39B100B61F8B /* SQLite2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite2.swift; sourceTree = "<group>"; };
+		B0BF44C6257C3D3100B61F8B /* SQLite2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite2Tests.swift; sourceTree = "<group>"; };
+		B0F7CCA3257B11F40089E1F1 /* sqlitebroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqlitebroker.swift; sourceTree = "<group>"; };
+		B0F7CCC1257B161F0089E1F1 /* SQLiteBrokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteBrokerTests.swift; sourceTree = "<group>"; };
+		B0F7CCD5257BE2D90089E1F1 /* share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = share.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,9 @@
 		B09372C325753767007F1E74 /* iOStask */ = {
 			isa = PBXGroup;
 			children = (
+				B0BF44B1257C399C00B61F8B /* SQLite2 */,
+				B0F7CCD4257BE2C00089E1F1 /* Share */,
+				B0F7CCA2257B11A80089E1F1 /* SQLBroker */,
 				B03AD381257A752C00D167D1 /* Views */,
 				B03E5BAD2577EA78006EA094 /* URL */,
 				B09372C425753767007F1E74 /* iOStaskApp.swift */,
@@ -157,6 +172,32 @@
 				B09372E325753768007F1E74 /* Info.plist */,
 			);
 			path = iOStaskUITests;
+			sourceTree = "<group>";
+		};
+		B0BF44B1257C399C00B61F8B /* SQLite2 */ = {
+			isa = PBXGroup;
+			children = (
+				B0BF44B2257C39B100B61F8B /* SQLite2.swift */,
+				B0BF44C6257C3D3100B61F8B /* SQLite2Tests.swift */,
+			);
+			path = SQLite2;
+			sourceTree = "<group>";
+		};
+		B0F7CCA2257B11A80089E1F1 /* SQLBroker */ = {
+			isa = PBXGroup;
+			children = (
+				B0F7CCA3257B11F40089E1F1 /* sqlitebroker.swift */,
+				B0F7CCC1257B161F0089E1F1 /* SQLiteBrokerTests.swift */,
+			);
+			path = SQLBroker;
+			sourceTree = "<group>";
+		};
+		B0F7CCD4257BE2C00089E1F1 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				B0F7CCD5257BE2D90089E1F1 /* share.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,9 +330,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03E5BAF2577EA95006EA094 /* url.swift in Sources */,
+				B0F7CCD6257BE2D90089E1F1 /* share.swift in Sources */,
 				B09372C725753767007F1E74 /* ContentView.swift in Sources */,
 				B03AD383257A756900D167D1 /* UIView1.swift in Sources */,
+				B0BF44B3257C39B100B61F8B /* SQLite2.swift in Sources */,
 				B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */,
+				B0F7CCA4257B11F40089E1F1 /* sqlitebroker.swift in Sources */,
 				B03AD38B257A757F00D167D1 /* UIView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,9 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F7CCC2257B161F0089E1F1 /* SQLiteBrokerTests.swift in Sources */,
 				B03E5BB82577EAF5006EA094 /* URL_test.swift in Sources */,
 				B09372D725753768007F1E74 /* iOStaskTests.swift in Sources */,
 				B03E5BB02577EA95006EA094 /* url.swift in Sources */,
+				B0BF44C7257C3D3100B61F8B /* SQLite2Tests.swift in Sources */,
+				B0F7CCB0257B14FA0089E1F1 /* sqlitebroker.swift in Sources */,
+				B0BF44BF257C3CE400B61F8B /* SQLite2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
