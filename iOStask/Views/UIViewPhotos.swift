@@ -12,16 +12,16 @@ struct UIViewPhotos: View {
     @State var image:Image?
     @State var imageUI:UIImageView?
     @State var resultUIImage:UIImage?
-
+    
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
-
+    
     func loadImage() {
         
         
         let db = DB()
         if let png = inputImage?.pngData() {
-
+            
             db.completeImage(png: png)
             self.resultUIImage  = UIImage(data: db.r![0].image as Data)!
         }
@@ -31,7 +31,7 @@ struct UIViewPhotos: View {
     
     var body: some View {
         
-       
+        
         
         if let image = resultUIImage {
             Image(uiImage: image)
