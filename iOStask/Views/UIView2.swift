@@ -28,10 +28,10 @@ struct RedMenu: MenuStyle {
 struct UIView2: View {
     @State private var isSharePresented: Bool = false
     @Environment(\.presentationMode) var presentation
-
+    
     var body: some View {
         
-
+        
         
         
         NavigationView {
@@ -40,10 +40,10 @@ struct UIView2: View {
             
             Menu {
                 Button("SQLite", action: {
-                        
+                    
                     let sb = SqliteBroker()
-                     sb.myStart()
-                     print("file url: \(sb.getDatabaseFileURL()) ")
+                    sb.myStart()
+                    print("file url: \(sb.getDatabaseFileURL()) ")
                     
                     
                     let textToShare = "SQLite Database"
@@ -56,14 +56,14 @@ struct UIView2: View {
                 
                 Button("Adjust Order", action: {print("a")})
                 Menu("Advanced") {
-                        Button("Rename", action: {print("r")})
-                        Button("Delay", action: {print("s")})
-                    }
+                    Button("Rename", action: {print("r")})
+                    Button("Delay", action: {print("s")})
+                }
             } label: {
                 VStack {
-                Label("Options", systemImage: "paperplane")
-                Text("stuff")
-                   
+                    Label("Options", systemImage: "paperplane")
+                    Text("stuff")
+                    
                 }
             }.padding()
             .navigationTitle("View2")
@@ -80,7 +80,7 @@ struct UIView2: View {
                     
                 }
             }
-
+            
             
         }
         

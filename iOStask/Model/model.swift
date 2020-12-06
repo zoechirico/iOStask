@@ -53,7 +53,7 @@ public class DB {
         db.open()
         db.execute(sql: "DROP TABLE IF EXISTS t0;")
         db.close()
-
+        
     }
     
     

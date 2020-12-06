@@ -35,15 +35,15 @@ struct UIViewPhotos: View {
         
         ScrollView(.horizontal){
             LazyHStack{
-
-                    ForEach(self.recs, id: \.self) {
-                        Image(uiImage: $0)
+                
+                ForEach(self.recs, id: \.self) {
+                    Image(uiImage: $0)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 300,height:300)
                         .shadow(radius: 15)
-                    }
-                    
+                }
+                
                 
             }
         }
@@ -53,7 +53,7 @@ struct UIViewPhotos: View {
         
         
         VStack {
-        
+            
             Button(action: {
                 let db = DB()
                 db.Delete(file: "iOStask.sqlite")
@@ -90,24 +90,24 @@ struct UIViewPhotos: View {
                     .multilineTextAlignment(.center)
                 
             }
-        
-        Button(action: {
-            self.showingImagePicker=true
             
-        }) {
-            Text("Select Image")
-                .padding([.leading,.trailing],20)
-                .padding([.top,.bottom],10)
-                .background(Color.yellow)
-                .foregroundColor(Color.black)
-                .cornerRadius(15)
-                .shadow(radius: 15)
-                .multilineTextAlignment(.center)
+            Button(action: {
+                self.showingImagePicker=true
+                
+            }) {
+                Text("Select Image")
+                    .padding([.leading,.trailing],20)
+                    .padding([.top,.bottom],10)
+                    .background(Color.yellow)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(15)
+                    .shadow(radius: 15)
+                    .multilineTextAlignment(.center)
+                
+            }.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                ImagePicker(image: self.$inputImage)
+            }
             
-        }.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-            ImagePicker(image: self.$inputImage)
-        }
-        
         }
     }
 }
