@@ -35,7 +35,7 @@ struct UIView1: View {
     var body: some View {
         
         
-            
+        
         
         VStack {
             
@@ -50,9 +50,9 @@ struct UIView1: View {
             }
         }
         VStack {
-        Text("View 1: \(self.sliderValue)  ")
-        
-        Text(" \(self.date, formatter: dateFormatter) ")
+            Text("View 1: \(self.sliderValue)  ")
+            
+            Text(" \(self.date, formatter: dateFormatter) ")
         }
         
     }

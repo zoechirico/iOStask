@@ -105,7 +105,7 @@ public class SQLite2 {
             ctx.cgContext.setFillColor(color1.cgColor)
             ctx.cgContext.setStrokeColor(color2.cgColor)
             ctx.cgContext.setLineWidth(10)
-
+            
             let rectangle = CGRect(x: 0, y: 0, width: size.width, height: size.height)
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
