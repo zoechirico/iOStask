@@ -163,15 +163,18 @@ public class SQLite2 {
             }
             let data = String(cString: queryResultCol1)
             
-            let num = sqlite3_column_double(statement, 2)
+           
             
             
-            let len = sqlite3_column_bytes(statement, 3)
-            let point = sqlite3_column_blob(statement, 3)
+            let len = sqlite3_column_bytes(statement, 2)
+            let point = sqlite3_column_blob(statement, 2)
             if point == nil {
                 return results
             }
             let image = NSData(bytes: point, length: Int(len))
+            
+            
+            let num = sqlite3_column_double(statement, 3)
             
             guard let queryResultCol4 = sqlite3_column_text(statement, 4) else {
                 print("Query result is nil")
