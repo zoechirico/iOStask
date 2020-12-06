@@ -34,7 +34,7 @@ public class SQLite2 {
     
     public func open(_ file: String = "test.sqlite")  {
         
-        if file != "test2.sqlite" {
+        if file != "test.sqlite" {
             self.file = file
         }
         
@@ -162,9 +162,6 @@ public class SQLite2 {
                 return results
             }
             let data = String(cString: queryResultCol1)
-            
-           
-            
             
             let len = sqlite3_column_bytes(statement, 2)
             let point = sqlite3_column_blob(statement, 2)
