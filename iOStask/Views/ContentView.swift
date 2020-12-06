@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State var showingView1 = false
     @State var showingView2 = false
+    @State var showingSQLite = false
     
     @State var txt0: String = "iOStask"
     @State var txt1: String = "Button"
@@ -18,7 +19,30 @@ struct ContentView: View {
     var body: some View {
         
         
-        
+        Button(action: {
+            
+            let sb = SqliteBroker()
+            sb.myStart()
+            print("file url: \(sb.getDatabaseFileURL()) ")
+            
+            
+            let textToShare = "SQLite Database"
+            let url = sb.getDatabaseFileURL()
+            let objectsToShare = [textToShare, url] as [Any]
+            
+            share(items: objectsToShare)
+        }){
+            Text("SQLite Send")
+                .padding(.all,30)
+                .padding([.top,.bottom],20)
+                .background(Color.blue)
+                .foregroundColor(Color.white)
+                .cornerRadius(5)
+                .shadow(radius: 25)
+                .font(Font.custom("Avenir-Black", size: 27))
+            
+            
+        }
         
         
         Button(action: {
@@ -39,11 +63,13 @@ struct ContentView: View {
         
         
         
+        
+        
         Button(action: {
             self.txt0 = " showingView1 \(self.showingView1)"
             self.txt1 = "button"
         }) {
-            Text(self.txt1)
+            Text(self.txt0)
                 .padding([.leading,.trailing],20)
                 .padding([.top,.bottom],10)
                 .background(Color.red)
