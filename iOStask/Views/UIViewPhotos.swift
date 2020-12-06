@@ -74,6 +74,7 @@ struct UIViewPhotos: View {
             Button(action: {
                 let db = DB()
                 let r = db.GetResults(file: "iOStask.sqlite")
+                self.recs.removeAll()
                 for rec in r! {
                     recs.append( UIImage(data: rec.image as Data)!)
                 }
