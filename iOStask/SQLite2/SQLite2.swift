@@ -14,11 +14,11 @@ public class SQLite2 {
     var db: OpaquePointer?
     var file: String?
     
-    public init(file: String = "test2.sqlite") {
+    public init(file: String = "test.sqlite") {
         self.file = file
     }
     
-    public func open(_ file: String = "test2.sqlite")  {
+    public func open(_ file: String = "test.sqlite")  {
         
         if file != "test2.sqlite" {
             self.file = file
@@ -51,6 +51,49 @@ public class SQLite2 {
             let errmsg = String(cString: sqlite3_errmsg(db))
             print("Error executing statement: \(errmsg)")
         }
+    }
+    
+    public func result()  {
+        
+        var statement: OpaquePointer?
+        
+        
+        if sqlite3_prepare_v2(db, "select data,timeEnter,t1key from t0;", -1, &statement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error preparing select: \(errmsg)")
+        }
+        
+        
+        while sqlite3_step(statement) == SQLITE_ROW {
+            
+            
+            guard let queryResultCol0 = sqlite3_column_text(statement, 0) else {
+                print("Query result is nil")
+                return
+            }
+            let data = String(cString: queryResultCol0)
+            
+            
+            guard let queryResultCol1 = sqlite3_column_text(statement, 1) else {
+                print("Query result is nil")
+                return
+            }
+            let timeEnter = String(cString: queryResultCol1)
+            
+            
+            let queryResultCol3 = sqlite3_column_int64(statement, 2)
+            let t1key = Int64(queryResultCol3)
+
+            
+            print("result: \(data), \(timeEnter), \(t1key)\n")
+            
+            
+        }
+        if sqlite3_finalize(statement) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("error finalizing prepared statement: \(errmsg)")
+        }
+        statement = nil
     }
     
     

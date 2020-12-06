@@ -21,8 +21,9 @@ class SQLite2Tests: XCTestCase {
         let db = SQLite2()
         db.open()
         var sql = """
+
         CREATE TABLE IF NOT EXISTS t0 (t1key INTEGER
-                  PRIMARY KEY,data TEXT,num double,timeEnter DATE);
+                  PRIMARY KEY,data text,num double,timeEnter DATE);
 
         CREATE TRIGGER IF NOT EXISTS insert_t0_timeEnter AFTER  INSERT ON t0
           BEGIN
@@ -33,11 +34,12 @@ class SQLite2Tests: XCTestCase {
         db.execute(sql: sql)
         
         sql = """
-            insert into t0 (data,num) values ('sample data',3);
+            insert into t0 (data,num) values ("A longer text",3);
             
             """
         db.execute(sql: sql)
         
+        db.result()
         
         db.close()
         
