@@ -12,10 +12,12 @@ public class DB {
     
     public func run() {
         let db = SQLite2(file: "iOStask.sqlite")
+        
         db.open()
+        db.execute(sql: "drop table t0;")
         db.create()
         
-        guard let  image = db.img(color: UIColor.green,size: CGSize(width: 20,height: 20)) else {
+        guard let  image = db.img2(color1: UIColor.green,color2: UIColor.blue, size: CGSize(width: 20,height: 20)) else {
             print("Can't create image.")
 
             return
