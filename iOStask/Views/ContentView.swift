@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var showingView2 = false
     @State var showingSQLite = false
     @State var showingImages = false
+    @State var showingPhotoSelect = false
     
     @State var txt0: String = "iOStask"
     @State var txt1: String = "Button"
@@ -100,6 +101,27 @@ struct ContentView: View {
             }.sheet(isPresented: $showingImages) {
                 UIViewImages()
             }
+            
+            
+            
+            
+            Button(action: {
+                self.showingPhotoSelect=true
+                
+            }) {
+                Text("Photo Select View")
+                    .padding([.leading,.trailing],20)
+                    .padding([.top,.bottom],10)
+                    .background(Color.yellow)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(15)
+                    .shadow(radius: 15)
+                    .multilineTextAlignment(.center)
+                
+            }.sheet(isPresented: $showingPhotoSelect) {
+                UIViewPhotos()
+            }
+            
             
             
             
