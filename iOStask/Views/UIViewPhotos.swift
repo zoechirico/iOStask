@@ -31,14 +31,14 @@ struct UIViewPhotos: View {
     
     var body: some View {
         
-        
-        
         if let image = resultUIImage {
             Image(uiImage: image)
-                .frame(width: 200, height: 300)
-                .aspectRatio(contentMode: ContentMode.fit)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 300,height:300)
+                .shadow(radius: 15)
+            
         }
-        
         
         Text("Select Photo")
         
