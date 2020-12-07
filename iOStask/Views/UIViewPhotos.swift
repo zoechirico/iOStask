@@ -41,6 +41,8 @@ struct UIViewPhotos: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 300,height:300)
+                        .background(Color.green)
+                        .cornerRadius(15)
                         .shadow(radius: 15)
                 }
                 
