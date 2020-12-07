@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00965B2257E8CD20048B657 /* DevStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00965B1257E8CD20048B657 /* DevStuff.swift */; };
+		B00965B3257E8CD20048B657 /* DevStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00965B1257E8CD20048B657 /* DevStuff.swift */; };
+		B00965BB257E8D040048B657 /* DevStuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00965BA257E8D040048B657 /* DevStuffTests.swift */; };
+		B0096609257EE28C0048B657 /* UIViewsMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0096608257EE28C0048B657 /* UIViewsMultiple.swift */; };
+		B009660A257EE28C0048B657 /* UIViewsMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0096608257EE28C0048B657 /* UIViewsMultiple.swift */; };
 		B03AD383257A756900D167D1 /* UIView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03AD382257A756900D167D1 /* UIView1.swift */; };
 		B03AD38B257A757F00D167D1 /* UIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03AD38A257A757F00D167D1 /* UIView2.swift */; };
 		B03E5BAF2577EA95006EA094 /* url.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E5BAE2577EA95006EA094 /* url.swift */; };
@@ -53,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B00965B1257E8CD20048B657 /* DevStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevStuff.swift; sourceTree = "<group>"; };
+		B00965BA257E8D040048B657 /* DevStuffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevStuffTests.swift; sourceTree = "<group>"; };
+		B0096608257EE28C0048B657 /* UIViewsMultiple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewsMultiple.swift; sourceTree = "<group>"; };
 		B03AD382257A756900D167D1 /* UIView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView1.swift; sourceTree = "<group>"; };
 		B03AD38A257A757F00D167D1 /* UIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView2.swift; sourceTree = "<group>"; };
 		B03E5BAE2577EA95006EA094 /* url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = url.swift; sourceTree = "<group>"; };
@@ -105,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00965B0257E8CB20048B657 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				B00965B1257E8CD20048B657 /* DevStuff.swift */,
+				B00965BA257E8D040048B657 /* DevStuffTests.swift */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
 		B03AD381257A752C00D167D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +130,7 @@
 				B03AD382257A756900D167D1 /* UIView1.swift */,
 				B03AD38A257A757F00D167D1 /* UIView2.swift */,
 				B0BF44DA257D04E000B61F8B /* UIViewImages.swift */,
+				B0096608257EE28C0048B657 /* UIViewsMultiple.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +167,7 @@
 		B09372C325753767007F1E74 /* iOStask */ = {
 			isa = PBXGroup;
 			children = (
+				B00965B0257E8CB20048B657 /* Dev */,
 				B0BF44E0257D07D600B61F8B /* Model */,
 				B0BF44B1257C399C00B61F8B /* SQLite2 */,
 				B0F7CCD4257BE2C00089E1F1 /* Share */,
@@ -369,8 +388,10 @@
 				B03AD383257A756900D167D1 /* UIView1.swift in Sources */,
 				B0BF44E2257D07EE00B61F8B /* model.swift in Sources */,
 				B0BF4513257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */,
+				B0096609257EE28C0048B657 /* UIViewsMultiple.swift in Sources */,
 				B0BF44B3257C39B100B61F8B /* SQLite2.swift in Sources */,
 				B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */,
+				B00965B2257E8CD20048B657 /* DevStuff.swift in Sources */,
 				B0F7CCA4257B11F40089E1F1 /* sqlitebroker.swift in Sources */,
 				B03AD38B257A757F00D167D1 /* UIView2.swift in Sources */,
 			);
@@ -383,11 +404,14 @@
 				B0BF450B257D1A6C00B61F8B /* photolib.swift in Sources */,
 				B0BF4514257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */,
 				B0F7CCC2257B161F0089E1F1 /* SQLiteBrokerTests.swift in Sources */,
+				B00965BB257E8D040048B657 /* DevStuffTests.swift in Sources */,
 				B03E5BB82577EAF5006EA094 /* URL_test.swift in Sources */,
 				B09372D725753768007F1E74 /* iOStaskTests.swift in Sources */,
 				B03E5BB02577EA95006EA094 /* url.swift in Sources */,
 				B0BF44DC257D04E000B61F8B /* UIViewImages.swift in Sources */,
+				B009660A257EE28C0048B657 /* UIViewsMultiple.swift in Sources */,
 				B0BF44C7257C3D3100B61F8B /* SQLite2Tests.swift in Sources */,
+				B00965B3257E8CD20048B657 /* DevStuff.swift in Sources */,
 				B0F7CCB0257B14FA0089E1F1 /* sqlitebroker.swift in Sources */,
 				B0BF44E3257D07EE00B61F8B /* model.swift in Sources */,
 				B0BF44BF257C3CE400B61F8B /* SQLite2.swift in Sources */,
