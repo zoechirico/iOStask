@@ -49,8 +49,8 @@ struct UIView2: View {
                     let textToShare = "SQLite Database"
                     let url = sb.getDatabaseFileURL()
                     let objectsToShare = [textToShare, url] as [Any]
-                    
-                    share(items: objectsToShare)
+                    iOStask.actionSheet(items: objectsToShare)
+
                 })
                 
                 
