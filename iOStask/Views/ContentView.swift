@@ -15,6 +15,8 @@ struct ContentView: View {
     @State var showingImages = false
     @State var showingPhotoSelect = false
     
+    @State private var hovered = false
+    
     @State var txt0: String = "iOStask"
     @State var txt1: String = "Button"
     
@@ -56,6 +58,11 @@ struct ContentView: View {
                 .padding([.top,.bottom],20)
                 .background(Color.green)
                 .foregroundColor(Color.black)
+                .scaleEffect(hovered ? 2.0 : 1.0)
+                            .animation(.default)
+                            .onHover { isHovered in
+                                self.hovered = isHovered
+                            }
                 .cornerRadius(5)
                 .shadow(radius: 25)
                 .font(Font.custom("Avenir-Black", size: 17))
