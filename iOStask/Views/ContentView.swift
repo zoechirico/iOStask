@@ -32,7 +32,7 @@ struct ContentView: View {
             let url = sb.getDatabaseFileURL()
             let objectsToShare = [textToShare, url] as [Any]
             
-            share(items: objectsToShare)
+            iOStask.actionSheet(items: objectsToShare)
         }){
             Text("SQLite Send")
                 .padding(.all,30)
