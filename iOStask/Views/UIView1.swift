@@ -35,12 +35,9 @@ struct UIView1: View {
     var body: some View {
         
         
-        
-        
         VStack {
             
             DatePicker(selection: $date, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
-            
             
             Slider(value: self.$sliderValue, in: 1...100)
             
