@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var showingSQLite = false
     @State var showingImages = false
     @State var showingPhotoSelect = false
+    @State var showingMultipleViews = false
     
     @State private var hovered = false
     
@@ -21,6 +22,25 @@ struct ContentView: View {
     @State var txt1: String = "Button"
     
     var body: some View {
+        
+        
+        Button(action: {
+            self.showingMultipleViews=true
+            
+        }) {
+            Text("Multiple Views")
+                .padding(.all,30)
+                .padding([.top,.bottom],20)
+                .background(Color.orange)
+                .foregroundColor(Color.black)
+                .cornerRadius(5)
+                .shadow(radius: 25)
+                .font(Font.custom("Avenir-Black", size: 27))
+            
+        }.fullScreenCover(isPresented: $showingMultipleViews) {
+            UIViewsMultiple(showModal: $showingMultipleViews)
+        }
+        
         
         
         Button(action: {
