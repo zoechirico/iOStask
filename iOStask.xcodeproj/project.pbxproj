@@ -20,6 +20,7 @@
 		B0626C03257F0CB20022D765 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C02257F0CB20022D765 /* Secrets.swift */; };
 		B0626C04257F0CB20022D765 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C02257F0CB20022D765 /* Secrets.swift */; };
 		B0626C1B257F0D2A0022D765 /* SecretsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C1A257F0D2A0022D765 /* SecretsTests.swift */; };
+		B0626C35257FD2C40022D765 /* UIViewMulti3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C34257FD2C40022D765 /* UIViewMulti3.swift */; };
 		B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372C425753767007F1E74 /* iOStaskApp.swift */; };
 		B09372C725753767007F1E74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372C625753767007F1E74 /* ContentView.swift */; };
 		B09372C925753768007F1E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09372C825753768007F1E74 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		B03E5BB72577EAF5006EA094 /* URL_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL_test.swift; sourceTree = "<group>"; };
 		B0626C02257F0CB20022D765 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		B0626C1A257F0D2A0022D765 /* SecretsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretsTests.swift; sourceTree = "<group>"; };
+		B0626C34257FD2C40022D765 /* UIViewMulti3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewMulti3.swift; sourceTree = "<group>"; };
 		B09372C125753767007F1E74 /* iOStask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09372C425753767007F1E74 /* iOStaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOStaskApp.swift; sourceTree = "<group>"; };
 		B09372C625753767007F1E74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				B095365D257EF57500AC1DD5 /* UIViewMulti1.swift */,
 				B0953666257EF58A00AC1DD5 /* UIViewMulti2.swift */,
+				B0626C34257FD2C40022D765 /* UIViewMulti3.swift */,
 			);
 			path = MultiView;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */,
 				B00965B2257E8CD20048B657 /* DevStuff.swift in Sources */,
 				B0F7CCA4257B11F40089E1F1 /* sqlitebroker.swift in Sources */,
+				B0626C35257FD2C40022D765 /* UIViewMulti3.swift in Sources */,
 				B03AD38B257A757F00D167D1 /* UIView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
