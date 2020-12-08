@@ -7,13 +7,21 @@
 
 import SwiftUI
 
+struct Record: Hashable {
+    var id: Int64
+    var title: String
+    var image: UIImage
+}
+
+
+
 struct UIViewPhotos: View {
     
     @State var image:Image?
     @State var imageUI:UIImageView?
     @State var resultUIImage:UIImage?
     
-    @State var recs:[UIImage]=[]
+    @State var recs:[Record]=[]
     
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
@@ -36,14 +44,32 @@ struct UIViewPhotos: View {
         ScrollView(.horizontal){
             LazyHStack{
                 
-                ForEach(self.recs, id: \.self) {
-                    Image(uiImage: $0)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 300,height:300)
-                        .background(Color.green)
-                        .cornerRadius(15)
-                        .shadow(radius: 15)
+                ForEach(self.recs, id: \.self) { r in
+                    
+                    
+                    VStack {
+                        
+                        Image(uiImage: r.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200,height:200)
+                            .background(Color.green)
+                            .cornerRadius(15)
+                            .shadow(radius: 15)
+                        Text(r.title)
+                            .padding([.leading,.trailing],20)
+                            .padding([.top,.bottom],10)
+                            .background(Color.black)
+                            .foregroundColor(Color.yellow)
+                            .cornerRadius(15)
+                            .shadow(radius: 15)
+                            .multilineTextAlignment(.center)
+                        
+                    }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    .background(Color.gray.opacity(0.20))
+                    .cornerRadius(5)
+                    .padding(.bottom)
+                    
                 }
                 
                 
@@ -51,8 +77,6 @@ struct UIViewPhotos: View {
         }
         
         Text("Select Photo")
-        
-        
         
         VStack {
             
@@ -78,7 +102,8 @@ struct UIViewPhotos: View {
                 let r = db.GetResults(file: "iOStask.sqlite")
                 self.recs.removeAll()
                 for rec in r! {
-                    recs.append( UIImage(data: rec.image as Data)!)
+                    let t = Record(id: rec.t1key, title: rec.data, image: UIImage(data: rec.image as Data)!)
+                    recs.append( t)
                 }
                 
             }) {
