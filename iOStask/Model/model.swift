@@ -57,13 +57,13 @@ public class DB {
     }
     
     
-    public func completeImage(png: Data) {
+    public func completeImage(title: String, png: Data) {
         let db = SQLite2(file: "iOStask.sqlite")
         
         db.open()
         db.create()
         
-        db.insert(data: "data a", image: png, num: 17.8)
+        db.insert(data: title, image: png, num: 17.8)
         r = db.result()
         
         db.close()

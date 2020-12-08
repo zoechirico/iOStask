@@ -21,6 +21,7 @@
 		B0626C04257F0CB20022D765 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C02257F0CB20022D765 /* Secrets.swift */; };
 		B0626C1B257F0D2A0022D765 /* SecretsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C1A257F0D2A0022D765 /* SecretsTests.swift */; };
 		B0626C35257FD2C40022D765 /* UIViewMulti3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C34257FD2C40022D765 /* UIViewMulti3.swift */; };
+		B0626C42257FE44F0022D765 /* UIViewMulti3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C34257FD2C40022D765 /* UIViewMulti3.swift */; };
 		B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372C425753767007F1E74 /* iOStaskApp.swift */; };
 		B09372C725753767007F1E74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372C625753767007F1E74 /* ContentView.swift */; };
 		B09372C925753768007F1E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09372C825753768007F1E74 /* Assets.xcassets */; };
@@ -450,6 +451,7 @@
 				B03E5BB82577EAF5006EA094 /* URL_test.swift in Sources */,
 				B09372D725753768007F1E74 /* iOStaskTests.swift in Sources */,
 				B03E5BB02577EA95006EA094 /* url.swift in Sources */,
+				B0626C42257FE44F0022D765 /* UIViewMulti3.swift in Sources */,
 				B0BF44DC257D04E000B61F8B /* UIViewImages.swift in Sources */,
 				B009660A257EE28C0048B657 /* UIViewsMultiple.swift in Sources */,
 				B0BF44C7257C3D3100B61F8B /* SQLite2Tests.swift in Sources */,

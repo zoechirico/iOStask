@@ -21,6 +21,8 @@ struct UIViewPhotos: View {
     @State var imageUI:UIImageView?
     @State var resultUIImage:UIImage?
     
+    @State var photoTitle:String = "Default title..."
+    
     @State var recs:[Record]=[]
     
     @State private var showingImagePicker = false
@@ -32,7 +34,7 @@ struct UIViewPhotos: View {
         let db = DB()
         if let png = inputImage?.pngData() {
             
-            db.completeImage(png: png)
+            db.completeImage(title: self.photoTitle, png: png)
             self.resultUIImage  = UIImage(data: db.r![0].image as Data)!
         }
         
@@ -77,6 +79,7 @@ struct UIViewPhotos: View {
         }
         
         Text("Select Photo")
+        
         
         VStack {
             
