@@ -21,6 +21,9 @@ struct UIViewPhotos: View {
     @State var imageUI:UIImageView?
     @State var resultUIImage:UIImage?
     
+    @State var showingMulti4 = false
+    @State private var stringToPass = ""
+    
     @State var photoTitle:String = "Default title..."
     
     @State var recs:[Record]=[]
@@ -51,21 +54,39 @@ struct UIViewPhotos: View {
                     
                     VStack {
                         
-                        Image(uiImage: r.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200,height:200)
-                            .background(Color.green)
-                            .cornerRadius(15)
-                            .shadow(radius: 15)
-                        Text(r.title)
-                            .padding([.leading,.trailing],20)
-                            .padding([.top,.bottom],10)
-                            .background(Color.black)
-                            .foregroundColor(Color.yellow)
-                            .cornerRadius(15)
-                            .shadow(radius: 15)
-                            .multilineTextAlignment(.center)
+                        
+                        
+                        
+                        Button(action: {
+                            self.showingMulti4=true
+                            self.stringToPass = r.title
+                        }) {
+                            
+                            VStack {
+                                
+                                Image(uiImage: r.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 200,height:200)
+                                    .background(Color.green)
+                                    .cornerRadius(15)
+                                    .shadow(radius: 15)
+                                
+                                Text(r.title)
+                                    .padding([.leading,.trailing],20)
+                                    .padding([.top,.bottom],10)
+                                    .background(Color.black)
+                                    .foregroundColor(Color.yellow)
+                                    .cornerRadius(15)
+                                    .shadow(radius: 15)
+                            }
+                            
+                            
+                        }.fullScreenCover(isPresented: $showingMulti4) {
+                            UIViewMulti4(showModal: $showingMulti4, s0: $stringToPass)
+                        }
+                        
+                        
                         
                     }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .background(Color.gray.opacity(0.20))

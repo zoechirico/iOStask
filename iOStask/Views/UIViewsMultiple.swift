@@ -57,7 +57,7 @@ struct UIViewsMultiple: View {
         Button(action: {
             self.showingMulti3=true
         }) {
-            Text("Multi2")
+            Text("Multi3")
                 .padding([.all],10)
                 .background(Color.yellow)
                 .foregroundColor(Color.black)
