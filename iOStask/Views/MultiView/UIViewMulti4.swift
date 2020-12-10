@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+
+
 struct UIViewMulti4: View {
     @Binding var showModal:Bool
-    @Binding var s0:String
+    
     var body: some View {
-        Text("string: \(s0)")
+        Text("string: ")
         Button(action: {
             self.showModal=false
         }) {
@@ -27,6 +29,6 @@ struct UIViewMulti4: View {
 
 struct UIViewMulti4_Previews: PreviewProvider {
     static var previews: some View {
-        UIViewMulti4(showModal: .constant(true),s0: .constant(String("")))
+        UIViewMulti4(showModal: .constant(true))
     }
 }

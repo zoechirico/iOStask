@@ -24,6 +24,10 @@
 		B0626C42257FE44F0022D765 /* UIViewMulti3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0626C34257FD2C40022D765 /* UIViewMulti3.swift */; };
 		B07F36E8258054520009D5E7 /* UIViewMulti4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F36E7258054520009D5E7 /* UIViewMulti4.swift */; };
 		B07F36E9258054520009D5E7 /* UIViewMulti4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F36E7258054520009D5E7 /* UIViewMulti4.swift */; };
+		B07F36F525825F810009D5E7 /* UIViewNav1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F36F425825F810009D5E7 /* UIViewNav1.swift */; };
+		B07F36F625825F810009D5E7 /* UIViewNav1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F36F425825F810009D5E7 /* UIViewNav1.swift */; };
+		B07F36FF25825FB50009D5E7 /* UIViewDetail1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F36FE25825FB50009D5E7 /* UIViewDetail1.swift */; };
+		B07F370025825FB50009D5E7 /* UIViewDetail1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F36FE25825FB50009D5E7 /* UIViewDetail1.swift */; };
 		B09372C525753767007F1E74 /* iOStaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372C425753767007F1E74 /* iOStaskApp.swift */; };
 		B09372C725753767007F1E74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09372C625753767007F1E74 /* ContentView.swift */; };
 		B09372C925753768007F1E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09372C825753768007F1E74 /* Assets.xcassets */; };
@@ -80,6 +84,8 @@
 		B0626C1A257F0D2A0022D765 /* SecretsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretsTests.swift; sourceTree = "<group>"; };
 		B0626C34257FD2C40022D765 /* UIViewMulti3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewMulti3.swift; sourceTree = "<group>"; };
 		B07F36E7258054520009D5E7 /* UIViewMulti4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewMulti4.swift; sourceTree = "<group>"; };
+		B07F36F425825F810009D5E7 /* UIViewNav1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewNav1.swift; sourceTree = "<group>"; };
+		B07F36FE25825FB50009D5E7 /* UIViewDetail1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewDetail1.swift; sourceTree = "<group>"; };
 		B09372C125753767007F1E74 /* iOStask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09372C425753767007F1E74 /* iOStaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOStaskApp.swift; sourceTree = "<group>"; };
 		B09372C625753767007F1E74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		B03AD381257A752C00D167D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B07F36F325825F470009D5E7 /* NavigationView */,
 				B095365C257EF55200AC1DD5 /* MultiView */,
 				B09372C625753767007F1E74 /* ContentView.swift */,
 				B0BF4512257D1B9F00B61F8B /* UIViewPhotos.swift */,
@@ -160,6 +167,23 @@
 				B03E5BB72577EAF5006EA094 /* URL_test.swift */,
 			);
 			path = URL;
+			sourceTree = "<group>";
+		};
+		B07F36F325825F470009D5E7 /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				B07F36FD25825F940009D5E7 /* Detail */,
+				B07F36F425825F810009D5E7 /* UIViewNav1.swift */,
+			);
+			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		B07F36FD25825F940009D5E7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B07F36FE25825FB50009D5E7 /* UIViewDetail1.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		B09372B825753767007F1E74 = {
@@ -422,6 +446,7 @@
 				B03E5BAF2577EA95006EA094 /* url.swift in Sources */,
 				B0BF450A257D1A6C00B61F8B /* photolib.swift in Sources */,
 				B0F7CCD6257BE2D90089E1F1 /* share.swift in Sources */,
+				B07F36FF25825FB50009D5E7 /* UIViewDetail1.swift in Sources */,
 				B0953667257EF58A00AC1DD5 /* UIViewMulti2.swift in Sources */,
 				B09372C725753767007F1E74 /* ContentView.swift in Sources */,
 				B0626C03257F0CB20022D765 /* Secrets.swift in Sources */,
@@ -429,6 +454,7 @@
 				B0BF44DB257D04E000B61F8B /* UIViewImages.swift in Sources */,
 				B03AD383257A756900D167D1 /* UIView1.swift in Sources */,
 				B0BF44E2257D07EE00B61F8B /* model.swift in Sources */,
+				B07F36F525825F810009D5E7 /* UIViewNav1.swift in Sources */,
 				B0BF4513257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */,
 				B07F36E8258054520009D5E7 /* UIViewMulti4.swift in Sources */,
 				B0096609257EE28C0048B657 /* UIViewsMultiple.swift in Sources */,
@@ -449,6 +475,7 @@
 				B0BF4514257D1B9F00B61F8B /* UIViewPhotos.swift in Sources */,
 				B0F7CCC2257B161F0089E1F1 /* SQLiteBrokerTests.swift in Sources */,
 				B0626C1B257F0D2A0022D765 /* SecretsTests.swift in Sources */,
+				B07F36F625825F810009D5E7 /* UIViewNav1.swift in Sources */,
 				B0953668257EF58A00AC1DD5 /* UIViewMulti2.swift in Sources */,
 				B00965BB257E8D040048B657 /* DevStuffTests.swift in Sources */,
 				B0626C04257F0CB20022D765 /* Secrets.swift in Sources */,
@@ -457,6 +484,7 @@
 				B07F36E9258054520009D5E7 /* UIViewMulti4.swift in Sources */,
 				B09372D725753768007F1E74 /* iOStaskTests.swift in Sources */,
 				B03E5BB02577EA95006EA094 /* url.swift in Sources */,
+				B07F370025825FB50009D5E7 /* UIViewDetail1.swift in Sources */,
 				B0626C42257FE44F0022D765 /* UIViewMulti3.swift in Sources */,
 				B0BF44DC257D04E000B61F8B /* UIViewImages.swift in Sources */,
 				B009660A257EE28C0048B657 /* UIViewsMultiple.swift in Sources */,

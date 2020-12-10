@@ -83,7 +83,7 @@ struct UIViewPhotos: View {
                             
                             
                         }.fullScreenCover(isPresented: $showingMulti4) {
-                            UIViewMulti4(showModal: $showingMulti4, s0: $stringToPass)
+                            UIViewMulti4(showModal: $showingMulti4)
                         }
                         
                         
